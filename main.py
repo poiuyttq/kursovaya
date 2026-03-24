@@ -12,7 +12,7 @@ y = np.zeros(n_points)
 
 for i in range(1, n_points):
 
-    x[i] = 1 - alfa * y[i-1]**2 + b * x[i-1]
+    x[i] = 1 - alfa * x[i-1]**2 - b * y[i-1]
     y[i] = x[i-1]
     
     # 3. СРАЗУ ЛОВИМ СЛИШКОМ БОЛЬШИЕ ЧИСЛА
@@ -33,15 +33,15 @@ y_clean = np.nan_to_num(y, nan=0.0, posinf=10.0, neginf=-10.0)
 # print(f"   Y диапазон: [{y_clean.min():.2f}, {y_clean.max():.2f}]")
 
 # 6. СОЗДАНИЕ ТОЧЕЧНОГО ГРАФИКА (ВОТ ГЛАВНОЕ ИЗМЕНЕНИЕ!)
-fig, ax = plt.subplots(figsize=(12, 8))
+fig, ax = plt.subplots(figsize=(7, 7))
 
 # scatter вместо LineCollection - рисует отдельные точки
 scatter = ax.scatter(
-    x_clean,           # X координаты
-    y_clean,           # Y координаты
-    c=np.arange(len(x_clean)),  # Цвет по номеру точки
-    cmap='viridis',    # Цветовая карта
-    s=5,               # Размер точек (можно менять: 1-50)
+    x_clean[100:],           # X координаты
+    y_clean[100:],           # Y координаты
+    c= "black",  # Цвет по номеру точки
+    #cmap='viridis',    # Цветовая карта
+    s=10,               # Размер точек (можно менять: 1-50)
     alpha=0.7,         # Прозрачность
     edgecolors='none'  # Без границы у точек
 )
