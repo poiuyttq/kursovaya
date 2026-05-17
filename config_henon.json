@@ -1,0 +1,46 @@
+{
+  "map": "henon",
+  "compute_method": "vector",
+  "draw_trajectory": true,
+  "draw_regime_map": true,
+  "output_dir": "output",
+  "initial_state": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "trajectory": {
+    "steps": 100000,
+    "skip_points": 100
+  },
+  "regime_map": {
+    "x_min": -0.5,
+    "x_max": 0.5,
+    "y_min": 0.0,
+    "y_max": 2.0,
+    "x_steps": 250,
+    "y_steps": 250,
+    "transient_steps": 1000,
+    "sample_steps": 500,
+    "divergence_check_steps": 1000,
+    "max_period": 4,
+    "divergence_limit": 10.0,
+    "tolerance": 0.0001,
+    "workers": 4,
+    "show_progress": true
+  },
+  "parameters": {
+    "henon": {
+      "b": 0.2,
+      "alfa": 1.4
+    },
+    "logistic": {
+      "r": 3.6
+    },
+    "power_abs": {
+      "mu": 1.0,
+      "A": 0.0,
+      "nu": 0.8,
+      "C": 1.3
+    }
+  }
+}

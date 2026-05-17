@@ -1,0 +1,55 @@
+{
+  "map": "logistic",
+  "compute_method": "vector",
+  "draw_trajectory": true,
+  "draw_regime_map": true,
+  "draw_bifurcation_diagram": true,
+  "output_dir": "output",
+  "initial_state": {
+    "x": 0.2,
+    "y": 0.0
+  },
+  "trajectory": {
+    "steps": 2000,
+    "skip_points": 100
+  },
+  "regime_map": {
+    "x_min": 0.0,
+    "x_max": 4.0,
+    "y_min": 0.0,
+    "y_max": 1.0,
+    "x_steps": 500,
+    "y_steps": 500,
+    "transient_steps": 250,
+    "sample_steps": 160,
+    "divergence_check_steps": 150,
+    "max_period": 150,
+    "divergence_limit": 10.0,
+    "tolerance": 0.0001,
+    "workers": 4,
+    "show_progress": true
+  },
+  "bifurcation_diagram": {
+    "r_min": 0.0,
+    "r_max": 4.0,
+    "r_steps": 3000,
+    "x0": 0.2,
+    "transient_steps": 1000,
+    "saved_iterations": 250
+  },
+  "parameters": {
+    "henon": {
+      "b": 0.2,
+      "alfa": 1.4
+    },
+    "logistic": {
+      "r": 3.6
+    },
+    "power_abs": {
+      "mu": 1.0,
+      "A": 0.0,
+      "nu": 0.8,
+      "C": 1.3
+    }
+  }
+}
